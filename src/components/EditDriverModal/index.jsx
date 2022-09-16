@@ -13,6 +13,7 @@ const EditDriverModal = ({ cpf, children }) => {
 
     const newDriver = {
       name,
+      is_active: true,
       birth_date: birthdate._d,
       phone,
       documents: [

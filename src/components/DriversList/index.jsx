@@ -1,11 +1,11 @@
-import { Avatar, List } from "antd";
+import { Avatar, List, Button } from "antd";
 import React, { useContext } from "react";
 import { DriversContext } from "../../providers/drivers";
 import getDocument from "../../utils/getDocument";
 import EditDriverModal from "../EditDriverModal";
 
 const DriversList = () => {
-  const { drivers } = useContext(DriversContext);
+  const { drivers, editDriver } = useContext(DriversContext);
 
   const driversActives = drivers.filter((item) => item.is_active);
 
@@ -21,6 +21,9 @@ const DriversList = () => {
             description={getDocument(driver, "CNH")}
           />
           <EditDriverModal cpf={getDocument(driver)}>Editar</EditDriverModal>
+          <Button onClick={() => editDriver(driver, false)} danger>
+            Excluir
+          </Button>
         </List.Item>
       )}
     />

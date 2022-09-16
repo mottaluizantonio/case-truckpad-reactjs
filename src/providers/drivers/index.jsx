@@ -27,10 +27,10 @@ export const DriversProvider = ({ children }) => {
     setDrivers([...drivers, driver]);
   };
 
-  const editDriver = (driver) => {
+  const editDriver = (driver, is_active = true) => {
     const updatedDriverList = drivers.map((item) => {
       if (getDocument(item) === getDocument(driver)) {
-        return { ...driver };
+        return { ...driver, is_active };
       }
       return item;
     });
