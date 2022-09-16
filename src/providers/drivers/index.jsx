@@ -20,7 +20,7 @@ export const DriversProvider = ({ children }) => {
         console.log(myJson);
         setDrivers(myJson);
       });
-  });
+  }, []);
 
   const addDriver = (driver) => {
     setDrivers([...drivers, driver]);

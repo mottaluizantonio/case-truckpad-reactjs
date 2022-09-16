@@ -1,6 +1,7 @@
 import { Avatar, List } from "antd";
 import React, { useContext } from "react";
 import { DriversContext } from "../../providers/drivers";
+import getDocument from "../../utils/getDocument";
 import EditDriverModal from "../EditDriverModal";
 
 const DriversList = () => {
@@ -10,14 +11,14 @@ const DriversList = () => {
     <List
       itemLayout="horizontal"
       dataSource={drivers}
-      renderItem={(item) => (
+      renderItem={(driver) => (
         <List.Item>
           <List.Item.Meta
             avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-            title={<a href="https://ant.design">{item.name}</a>}
-            description={item.name}
+            title={<a href="https://ant.design">{driver.name}</a>}
+            description={getDocument(driver, "CNH")}
           />
-          <EditDriverModal>Editar</EditDriverModal>
+          <EditDriverModal cpf={getDocument(driver)}>Editar</EditDriverModal>
         </List.Item>
       )}
     />

@@ -1,7 +1,12 @@
 import { DatePicker, Form, Input, Modal } from "antd";
-import React from "react";
+import React, { useContext } from "react";
+import { DriversContext } from "../../providers/drivers";
+import getDocument from "../../utils/getDocument";
 
-const CollectionEditForm = ({ open, onCreate, onCancel }) => {
+const CollectionEditForm = ({ cpf, open, onCreate, onCancel }) => {
+  const { drivers } = useContext(DriversContext);
+  const driver = drivers.find((driver) => getDocument(driver) === cpf);
+
   const [form] = Form.useForm();
   return (
     <Modal
@@ -32,7 +37,7 @@ const CollectionEditForm = ({ open, onCreate, onCancel }) => {
       >
         <Form.Item
           name="name"
-          label="Nome"
+          label={driver.name}
           rules={[
             {
               required: true,
