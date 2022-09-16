@@ -4,10 +4,32 @@ import { DriversContext } from "../../providers/drivers";
 import CollectionEditForm from "./CollectionEditForm";
 
 const EditDriverModal = ({ cpf, children }) => {
+  const { drivers, editDriver } = useContext(DriversContext);
+
   const [open, setOpen] = useState(false);
 
   const onCreate = (values) => {
-    console.log("Received values of form: ", values);
+    const { name, phone, birthdate, cnh, category, cpf } = values;
+
+    const newDriver = {
+      name,
+      birth_date: birthdate._d,
+      phone,
+      documents: [
+        {
+          doc_type: "CNH",
+          category,
+          number: cnh,
+        },
+        {
+          doc_type: "CPF",
+          number: cpf,
+        },
+      ],
+    };
+
+    console.log("New driver: ", newDriver);
+    editDriver(newDriver);
     setOpen(false);
   };
 

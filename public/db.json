@@ -1,6 +1,7 @@
 [
   {
     "name": "Pouca Tripa",
+    "is_active": true,
     "birth_date": "1976-09-22T00:00:00",
     "state": "São Paulo",
     "city": "São Paulo",
@@ -32,6 +33,7 @@
   },
   {
     "name": "Quase nada",
+    "is_active": true,
     "birth_date": "1986-09-22T00:00:00",
     "state": "Rio de Janeiro",
     "city": "Niterói",

@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import getDocument from "../../utils/getDocument";
 
 export const DriversContext = createContext([]);
 
@@ -27,8 +28,14 @@ export const DriversProvider = ({ children }) => {
   };
 
   const editDriver = (driver) => {
-    const newDriversList = drivers.filter((item) => item !== driver);
-    setDrivers(newDriversList);
+    const updatedDriverList = drivers.map((item) => {
+      if (getDocument(item) === getDocument(driver)) {
+        return { ...driver };
+      }
+      return item;
+    });
+
+    setDrivers(updatedDriverList);
   };
 
   return (

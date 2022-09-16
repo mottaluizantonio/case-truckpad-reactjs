@@ -10,7 +10,6 @@ const CreateDriverModal = ({ children }) => {
   const [open, setOpen] = useState(false);
 
   const onCreate = (values) => {
-    console.log("Received values of form: ", values);
     const { name, phone, birthdate, cnh, category, cpf } = values;
 
     const cpfAlreadyRegistered = drivers.find(
@@ -20,7 +19,7 @@ const CreateDriverModal = ({ children }) => {
     if (!cpfAlreadyRegistered) {
       const newDriver = {
         name,
-        birthdate,
+        birth_date: birthdate._d,
         phone,
         documents: [
           {
@@ -35,6 +34,7 @@ const CreateDriverModal = ({ children }) => {
         ],
       };
 
+      console.log("New driver: ", newDriver);
       addDriver(newDriver);
       setOpen(false);
     }
