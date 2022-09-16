@@ -1,4 +1,4 @@
-import { Avatar, List, Button, message } from "antd";
+import { Avatar, List, Button, message, Popconfirm } from "antd";
 import React, { useContext } from "react";
 import { DriversContext } from "../../providers/drivers";
 import getDocument from "../../utils/getDocument";
@@ -22,9 +22,14 @@ const DriversList = () => {
         <List.Item
           actions={[
             <EditDriverModal cpf={getDocument(driver)}>Editar</EditDriverModal>,
-            <Button onClick={() => handleClick(driver)} danger>
-              Excluir
-            </Button>,
+            <Popconfirm
+              title="Tem certeza que quer excluir esse motorista?"
+              onConfirm={() => handleClick(driver)}
+              okText="Sim"
+              cancelText="Não"
+            >
+              <Button danger>Excluir</Button>
+            </Popconfirm>,
           ]}
         >
           <List.Item.Meta
