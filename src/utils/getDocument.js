@@ -1,4 +1,4 @@
-const getDocument = (driver, docType = "CPF") => {
+const getDocument = (driver, docType) => {
   if (docType === "CNH") {
     return (
       driver.documents.find((doc) => (doc.doc_type = "CNH")).category ||
@@ -6,7 +6,10 @@ const getDocument = (driver, docType = "CPF") => {
     );
   } else {
     if (docType === "numberCNH") {
-      return driver.documents.find((doc) => (doc.doc_type = "CNH")).number;
+      return (
+        driver.documents.find((doc) => (doc.doc_type = "CNH")).number ||
+        "indisponível"
+      );
     }
     return driver.documents.find((doc) => (doc.doc_type = "CPF")).number;
   }

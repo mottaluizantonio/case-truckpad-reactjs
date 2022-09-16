@@ -7,9 +7,7 @@ import {
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import React, { useState } from "react";
-import CreateDriver from "./components/CreateDriver";
 import CreateDriverModal from "./components/CreateDriverModal";
-import DriversCarousel from "./components/DriversCarousel";
 import DriversList from "./components/DriversList";
 
 const { Header, Sider, Content } = Layout;
@@ -67,8 +65,6 @@ const App = () => {
             minHeight: 280,
           }}
         >
-          {/* <DriversCarousel /> */}
-          {/* <CreateDriver /> */}
           <CreateDriverModal>Novo motorista</CreateDriverModal>
           <DriversList />
         </Content>

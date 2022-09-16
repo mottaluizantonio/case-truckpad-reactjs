@@ -7,10 +7,12 @@ import EditDriverModal from "../EditDriverModal";
 const DriversList = () => {
   const { drivers } = useContext(DriversContext);
 
+  const driversActives = drivers.filter((item) => item.is_active);
+
   return (
     <List
       itemLayout="horizontal"
-      dataSource={drivers}
+      dataSource={driversActives}
       renderItem={(driver) => (
         <List.Item>
           <List.Item.Meta

@@ -19,6 +19,7 @@ const CreateDriverModal = ({ children }) => {
     if (!cpfAlreadyRegistered) {
       const newDriver = {
         name,
+        is_active: true,
         birth_date: birthdate._d,
         phone,
         documents: [
