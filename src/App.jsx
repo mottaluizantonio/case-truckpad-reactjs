@@ -68,9 +68,9 @@ const App = () => {
           }}
         >
           {/* <DriversCarousel /> */}
-          <DriversList />
-          <CreateDriver />
+          {/* <CreateDriver /> */}
           <CreateDriverModal>Novo motorista</CreateDriverModal>
+          <DriversList />
         </Content>
       </Layout>
     </Layout>

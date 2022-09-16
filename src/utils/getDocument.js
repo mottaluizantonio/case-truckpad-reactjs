@@ -4,8 +4,12 @@ const getDocument = (driver, docType = "CPF") => {
       driver.documents.find((doc) => (doc.doc_type = "CNH")).category ||
       "indisponível"
     );
+  } else {
+    if (docType === "numberCNH") {
+      return driver.documents.find((doc) => (doc.doc_type = "CNH")).number;
+    }
+    return driver.documents.find((doc) => (doc.doc_type = "CPF")).number;
   }
-  return driver.documents.find((doc) => (doc.doc_type = "CPF")).number;
 };
 
 export default getDocument;

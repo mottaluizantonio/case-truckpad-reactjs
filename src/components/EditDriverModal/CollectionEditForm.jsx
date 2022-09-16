@@ -37,7 +37,8 @@ const CollectionEditForm = ({ cpf, open, onCreate, onCancel }) => {
       >
         <Form.Item
           name="name"
-          label={driver.name}
+          initialValue={driver.name}
+          label="Nome completo"
           rules={[
             {
               required: true,
@@ -49,6 +50,7 @@ const CollectionEditForm = ({ cpf, open, onCreate, onCancel }) => {
         </Form.Item>
         <Form.Item
           name="phone"
+          initialValue={driver.phone}
           label="Telefone"
           rules={[
             {
@@ -60,6 +62,7 @@ const CollectionEditForm = ({ cpf, open, onCreate, onCancel }) => {
           <Input />
         </Form.Item>
         <Form.Item
+          name="birthdate"
           label="Data de Nascimento"
           rules={[
             {
@@ -72,6 +75,7 @@ const CollectionEditForm = ({ cpf, open, onCreate, onCancel }) => {
         </Form.Item>
         <Form.Item
           name="cnh"
+          initialValue={getDocument(driver, "numberCNH")}
           label="Número da CNH"
           rules={[
             {
@@ -84,6 +88,7 @@ const CollectionEditForm = ({ cpf, open, onCreate, onCancel }) => {
         </Form.Item>
         <Form.Item
           name="category"
+          initialValue={getDocument(driver, "CNH")}
           label="Categoria da CNH"
           rules={[
             {
@@ -96,6 +101,7 @@ const CollectionEditForm = ({ cpf, open, onCreate, onCancel }) => {
         </Form.Item>
         <Form.Item
           name="cpf"
+          initialValue={getDocument(driver)}
           label="CPF"
           rules={[
             {

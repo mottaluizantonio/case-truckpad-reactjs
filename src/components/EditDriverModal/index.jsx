@@ -1,8 +1,9 @@
 import { Button } from "antd";
-import React, { useState } from "react";
-import CollectionCreateForm from "./CollectionCreateForm";
+import React, { useContext, useState } from "react";
+import { DriversContext } from "../../providers/drivers";
+import CollectionEditForm from "./CollectionEditForm";
 
-const CreateDriverModal = ({ children }) => {
+const EditDriverModal = ({ cpf, children }) => {
   const [open, setOpen] = useState(false);
 
   const onCreate = (values) => {
@@ -20,7 +21,8 @@ const CreateDriverModal = ({ children }) => {
       >
         {children}
       </Button>
-      <CollectionCreateForm
+      <CollectionEditForm
+        cpf={cpf}
         open={open}
         onCreate={onCreate}
         onCancel={() => {
@@ -31,4 +33,4 @@ const CreateDriverModal = ({ children }) => {
   );
 };
 
-export default CreateDriverModal;
+export default EditDriverModal;

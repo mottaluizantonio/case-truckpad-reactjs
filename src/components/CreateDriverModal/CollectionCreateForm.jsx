@@ -3,6 +3,7 @@ import React from "react";
 
 const CollectionCreateForm = ({ open, onCreate, onCancel }) => {
   const [form] = Form.useForm();
+
   return (
     <Modal
       open={open}
@@ -55,6 +56,7 @@ const CollectionCreateForm = ({ open, onCreate, onCancel }) => {
           <Input />
         </Form.Item>
         <Form.Item
+          name="birthdate"
           label="Data de Nascimento"
           rules={[
             {
@@ -94,6 +96,7 @@ const CollectionCreateForm = ({ open, onCreate, onCancel }) => {
           label="CPF"
           rules={[
             {
+              unique: true,
               required: true,
               message: "Por favor, insira o número do CPF.",
             },
