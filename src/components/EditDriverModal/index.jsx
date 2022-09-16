@@ -1,10 +1,10 @@
-import { Button } from "antd";
+import { Button, message } from "antd";
 import React, { useContext, useState } from "react";
 import { DriversContext } from "../../providers/drivers";
 import CollectionEditForm from "./CollectionEditForm";
 
 const EditDriverModal = ({ cpf, children }) => {
-  const { drivers, editDriver } = useContext(DriversContext);
+  const { editDriver } = useContext(DriversContext);
 
   const [open, setOpen] = useState(false);
 
@@ -31,6 +31,7 @@ const EditDriverModal = ({ cpf, children }) => {
 
     console.log("New driver: ", newDriver);
     editDriver(newDriver);
+    message.success("Motorista atualizado com sucesso!");
     setOpen(false);
   };
 

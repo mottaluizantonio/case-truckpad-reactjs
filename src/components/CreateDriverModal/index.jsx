@@ -1,4 +1,4 @@
-import { Button } from "antd";
+import { Button, message } from "antd";
 import React, { useContext, useState } from "react";
 import { DriversContext } from "../../providers/drivers";
 import getDocument from "../../utils/getDocument";
@@ -37,7 +37,10 @@ const CreateDriverModal = ({ children }) => {
 
       console.log("New driver: ", newDriver);
       addDriver(newDriver);
+      message.success("Motorista criado com sucesso!");
       setOpen(false);
+    } else {
+      message.error("CPF já cadastrado!");
     }
   };
 
