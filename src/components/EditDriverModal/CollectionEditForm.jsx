@@ -16,15 +16,10 @@ const CollectionEditForm = ({ cpf, open, onCreate, onCancel }) => {
       cancelText="Cancelar"
       onCancel={onCancel}
       onOk={() => {
-        form
-          .validateFields()
-          .then((values) => {
-            form.resetFields();
-            onCreate(values);
-          })
-          .catch((info) => {
-            console.log("Validate Failed:", info);
-          });
+        form.validateFields().then((values) => {
+          form.resetFields();
+          onCreate(values);
+        });
       }}
     >
       <Form

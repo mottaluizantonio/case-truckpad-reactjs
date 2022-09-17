@@ -1,8 +1,4 @@
-import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from "@ant-design/icons";
+import { UserOutlined } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import React from "react";
 import CreateDriverModal from "./components/CreateDriverModal";

@@ -29,7 +29,6 @@ const EditDriverModal = ({ cpf, children }) => {
       ],
     };
 
-    console.log("New driver: ", newDriver);
     editDriver(newDriver);
     message.success("Motorista atualizado com sucesso!");
     setOpen(false);
