@@ -1,8 +1,9 @@
 $yellow: #face49;
 $black: #2d2d2d;
+$white: #fff;
 
 .header {
-  background: #fff;
+  background: $white;
   height: 50px;
   padding: 0px 5vw;
 
@@ -13,18 +14,15 @@ $black: #2d2d2d;
 
 .menu {
   width: 140px;
-
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
 }
+
 .content {
   display: flex;
   justify-content: center;
 }
 
 .site-layout-background {
-  background: #fff;
+  background: $white;
   width: 100%;
   max-width: 600px;
 
