@@ -1,74 +1,73 @@
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from "@ant-design/icons";
+import { UserOutlined } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
-import React, { useState } from "react";
+import React from "react";
 import CreateDriverModal from "./components/CreateDriverModal";
 import DriversList from "./components/DriversList";
+import "./App.scss";
 
-const { Header, Sider, Content } = Layout;
+const { Header, Content, Footer } = Layout;
 
 const App = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const navs = [
+    {
+      key: "1",
+      icon: React.createElement(UserOutlined),
+      label: "Motoristas",
+    },
+  ];
 
   return (
-    <Layout>
-      <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="logo" />
+    <Layout
+      style={{
+        height: "100vh",
+      }}
+    >
+      <Header
+        className="header"
+        style={{
+          background: "#fff",
+          padding: "0px 5vw",
+        }}
+      >
+        <div className="logo">
+          <img
+            src="https://www.truckpad.com.br/wp-content/uploads/2019/11/016f3cfa-truckpad-logo.svg"
+            alt="truckpad-logo"
+          />
+        </div>
         <Menu
-          theme="dark"
-          mode="inline"
+          className="menu"
+          theme="light"
+          mode="horizontal"
           defaultSelectedKeys={["1"]}
-          items={[
-            {
-              key: "1",
-              icon: <UserOutlined />,
-              label: "nav 1",
-            },
-            {
-              key: "2",
-              icon: <VideoCameraOutlined />,
-              label: "nav 2",
-            },
-            {
-              key: "3",
-              icon: <UploadOutlined />,
-              label: "nav 3",
-            },
-          ]}
+          items={navs}
         />
-      </Sider>
-      <Layout className="site-layout">
-        <Header
+      </Header>
+      <Content
+        className="content"
+        style={{
+          margin: "24px 16px 0",
+        }}
+      >
+        <div
           className="site-layout-background"
           style={{
-            padding: 0,
-          }}
-        >
-          {React.createElement(
-            collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-            {
-              className: "trigger",
-              onClick: () => setCollapsed(!collapsed),
-            }
-          )}
-        </Header>
-        <Content
-          className="site-layout-background"
-          style={{
-            margin: "24px 16px",
             padding: 24,
-            minHeight: 280,
+            minHeight: 360,
           }}
         >
-          <CreateDriverModal>Novo motorista</CreateDriverModal>
+          <h3>Motoristas</h3>
           <DriversList />
-        </Content>
-      </Layout>
+          <CreateDriverModal>Novo motorista</CreateDriverModal>
+        </div>
+      </Content>
+      <Footer
+        style={{
+          textAlign: "center",
+        }}
+      >
+        Case Frontend React TruckPad - Luiz Antonio Motta
+      </Footer>
     </Layout>
   );
 };

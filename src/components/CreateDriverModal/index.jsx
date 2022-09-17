@@ -25,7 +25,7 @@ const CreateDriverModal = ({ children }) => {
         documents: [
           {
             doc_type: "CNH",
-            category,
+            category: category.toUpperCase(),
             number: cnh,
           },
           {
@@ -35,7 +35,6 @@ const CreateDriverModal = ({ children }) => {
         ],
       };
 
-      console.log("New driver: ", newDriver);
       addDriver(newDriver);
       message.success("Motorista criado com sucesso!");
       setOpen(false);
@@ -47,6 +46,9 @@ const CreateDriverModal = ({ children }) => {
   return (
     <div>
       <Button
+        style={{
+          marginTop: "50px",
+        }}
         type="primary"
         onClick={() => {
           setOpen(true);
