@@ -23,7 +23,7 @@ const DriversList = () => {
           actions={[
             <EditDriverModal cpf={getDocument(driver)}>Editar</EditDriverModal>,
             <Popconfirm
-              title="Tem certeza que quer excluir esse motorista?"
+              title="Tem certeza que deseja excluir este motorista?"
               onConfirm={() => handleClick(driver)}
               okText="Sim"
               cancelText="Não"

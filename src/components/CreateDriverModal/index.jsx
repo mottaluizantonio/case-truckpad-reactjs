@@ -25,7 +25,7 @@ const CreateDriverModal = ({ children }) => {
         documents: [
           {
             doc_type: "CNH",
-            category,
+            category: category.toUpperCase(),
             number: cnh,
           },
           {
@@ -47,6 +47,9 @@ const CreateDriverModal = ({ children }) => {
   return (
     <div>
       <Button
+        style={{
+          marginTop: "50px",
+        }}
         type="primary"
         onClick={() => {
           setOpen(true);

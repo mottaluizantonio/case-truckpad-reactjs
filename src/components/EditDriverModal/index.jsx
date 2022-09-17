@@ -19,7 +19,7 @@ const EditDriverModal = ({ cpf, children }) => {
       documents: [
         {
           doc_type: "CNH",
-          category,
+          category: category.toUpperCase(),
           number: cnh,
         },
         {

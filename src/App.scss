@@ -1,21 +1,49 @@
-#components-layout-demo-custom-trigger .trigger {
-  padding: 0 24px;
-  font-size: 18px;
-  line-height: 64px;
-  cursor: pointer;
-  transition: color 0.3s;
-}
+$yellow: #face49;
+$black: #2d2d2d;
 
-#components-layout-demo-custom-trigger .trigger:hover {
-  color: #1890ff;
-}
-
-#components-layout-demo-custom-trigger .logo {
-  height: 32px;
-  margin: 16px;
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.site-layout .site-layout-background {
+.header {
   background: #fff;
+  height: 50px;
+  padding: 0px 5vw;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  width: 140px;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.site-layout-background {
+  background: #fff;
+  width: 100%;
+  max-width: 600px;
+
+  h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.ant-menu-item-selected {
+  color: $black !important;
+}
+
+.ant-menu-item-selected::after {
+  border-bottom: 2px solid $yellow !important;
+}
+
+.ant-btn-primary {
+  background: $yellow !important;
+  border-color: $yellow !important;
+  color: $black !important;
 }
