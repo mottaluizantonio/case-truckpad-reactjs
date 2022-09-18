@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-import getDocument from "../../utils/getDocument";
 
 export const DriversContext = createContext([]);
 
@@ -27,7 +26,7 @@ export const DriversProvider = ({ children }) => {
 
   const editDriver = (driver, is_active = true) => {
     const updatedDriverList = drivers.map((item) => {
-      if (getDocument(item) === getDocument(driver)) {
+      if (item.documents.cpf.number === driver.documents.cpf.number) {
         return { ...driver, is_active };
       }
       return item;

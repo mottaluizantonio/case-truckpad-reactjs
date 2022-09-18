@@ -16,17 +16,17 @@ const EditDriverModal = ({ cpf, children }) => {
       is_active: true,
       birth_date: birthdate._d,
       phone,
-      documents: [
-        {
+      documents: {
+        cpf: {
           doc_type: "CPF",
           number: cpf,
         },
-        {
+        cnh: {
           doc_type: "CNH",
           category: category.toUpperCase(),
           number: cnh,
         },
-      ],
+      },
     };
 
     editDriver(newDriver);

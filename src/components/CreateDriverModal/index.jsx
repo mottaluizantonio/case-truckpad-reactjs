@@ -1,7 +1,6 @@
 import { Button, message } from "antd";
 import React, { useContext, useState } from "react";
 import { DriversContext } from "../../providers/drivers";
-import getDocument from "../../utils/getDocument";
 import CollectionCreateForm from "./CollectionCreateForm";
 
 const CreateDriverModal = ({ children }) => {
@@ -13,7 +12,7 @@ const CreateDriverModal = ({ children }) => {
     const { name, phone, birthdate, cnh, category, cpf } = values;
 
     const cpfAlreadyRegistered = drivers.find(
-      (driver) => getDocument(driver) === cpf
+      (driver) => driver.documents.cpf.number === cpf
     );
 
     if (!cpfAlreadyRegistered) {
@@ -22,25 +21,25 @@ const CreateDriverModal = ({ children }) => {
         is_active: true,
         birth_date: birthdate._d,
         phone,
-        documents: [
-          {
+        documents: {
+          cpf: {
             doc_type: "CPF",
             number: cpf,
           },
-          {
+          cnh: {
             doc_type: "CNH",
             category: category.toUpperCase(),
             number: cnh,
           },
-        ],
+        },
       };
 
-      console.log(newDriver);
       addDriver(newDriver);
       message.success("Motorista criado com sucesso!");
       setOpen(false);
     } else {
       message.error("CPF já cadastrado!");
+      setOpen(false);
     }
   };
 
