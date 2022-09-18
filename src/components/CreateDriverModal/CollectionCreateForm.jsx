@@ -7,6 +7,7 @@ const CollectionCreateForm = ({ open, onCreate, onCancel }) => {
   return (
     <Modal
       open={open}
+      style={{ maxWidth: "300px" }}
       title="Cadastrar motorista:"
       okText="Cadastrar"
       cancelText="Cancelar"

@@ -16,20 +16,20 @@
       "postal_code": "01300-000",
       "street_name": "Avenida Paulista"
     },
-    "documents": [
-      {
+    "documents": {
+      "cnh": {
         "expires_at": "2010-11-23T00:00:00+00:00",
         "country": "BR",
         "number": "700441702",
         "doc_type": "CNH",
         "category": "AB"
       },
-      {
+      "cpf": {
         "country": "BR",
         "number": "32132132188",
         "doc_type": "CPF"
       }
-    ]
+    }
   },
   {
     "name": "Quase nada",
@@ -48,12 +48,12 @@
       "postal_code": "",
       "street_name": ""
     },
-    "documents": [
-      {
+    "documents": {
+      "cpf": {
         "country": "BR",
         "number": "12312312377",
         "doc_type": "CPF"
       }
-    ]
+    }
   }
 ]

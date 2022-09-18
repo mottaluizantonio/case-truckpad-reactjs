@@ -24,17 +24,18 @@ const CreateDriverModal = ({ children }) => {
         phone,
         documents: [
           {
+            doc_type: "CPF",
+            number: cpf,
+          },
+          {
             doc_type: "CNH",
             category: category.toUpperCase(),
             number: cnh,
           },
-          {
-            doc_type: "CPF",
-            number: cpf,
-          },
         ],
       };
 
+      console.log(newDriver);
       addDriver(newDriver);
       message.success("Motorista criado com sucesso!");
       setOpen(false);

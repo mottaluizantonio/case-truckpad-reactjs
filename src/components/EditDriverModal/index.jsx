@@ -18,13 +18,13 @@ const EditDriverModal = ({ cpf, children }) => {
       phone,
       documents: [
         {
+          doc_type: "CPF",
+          number: cpf,
+        },
+        {
           doc_type: "CNH",
           category: category.toUpperCase(),
           number: cnh,
-        },
-        {
-          doc_type: "CPF",
-          number: cpf,
         },
       ],
     };

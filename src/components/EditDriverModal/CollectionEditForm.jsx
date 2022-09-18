@@ -1,17 +1,26 @@
 import { DatePicker, Form, Input, Modal } from "antd";
 import React, { useContext } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { DriversContext } from "../../providers/drivers";
 import getDocument from "../../utils/getDocument";
 
 const CollectionEditForm = ({ cpf, open, onCreate, onCancel }) => {
   const { drivers } = useContext(DriversContext);
-  const driver = drivers.find((driver) => getDocument(driver) === cpf);
+  const [driver, setDriver] = useState(
+    drivers.find((driver) => getDocument(driver) === cpf)
+  );
+
+  useEffect(() => {
+    setDriver(drivers.find((driver) => getDocument(driver) === cpf));
+  }, [drivers]);
 
   const [form] = Form.useForm();
   return (
     <Modal
       open={open}
       title="Editar motorista:"
+      style={{ maxWidth: "300px" }}
       okText="Salvar"
       cancelText="Cancelar"
       onCancel={onCancel}
