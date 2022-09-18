@@ -1,7 +1,6 @@
 import { Avatar, List, Button, message, Popconfirm } from "antd";
 import React, { useContext } from "react";
 import { DriversContext } from "../../providers/drivers";
-import getDocument from "../../utils/getDocument";
 import EditDriverModal from "../EditDriverModal";
 
 const DriversList = () => {
@@ -21,7 +20,9 @@ const DriversList = () => {
       renderItem={(driver) => (
         <List.Item
           actions={[
-            <EditDriverModal cpf={getDocument(driver)}>Editar</EditDriverModal>,
+            <EditDriverModal cpf={driver.documents.cpf.number}>
+              Editar
+            </EditDriverModal>,
             <Popconfirm
               title="Tem certeza que deseja excluir este motorista?"
               onConfirm={() => handleClick(driver)}
@@ -35,7 +36,7 @@ const DriversList = () => {
           <List.Item.Meta
             avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
             title={<a href="https://ant.design">{driver.name}</a>}
-            description={getDocument(driver, "CNH")}
+            description={driver.documents.cnh.category}
           />
         </List.Item>
       )}

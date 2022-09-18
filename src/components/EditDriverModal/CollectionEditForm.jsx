@@ -3,16 +3,15 @@ import React, { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { DriversContext } from "../../providers/drivers";
-import getDocument from "../../utils/getDocument";
 
 const CollectionEditForm = ({ cpf, open, onCreate, onCancel }) => {
   const { drivers } = useContext(DriversContext);
   const [driver, setDriver] = useState(
-    drivers.find((driver) => getDocument(driver) === cpf)
+    drivers.find((driver) => driver.documents.cpf.number === cpf)
   );
 
   useEffect(() => {
-    setDriver(drivers.find((driver) => getDocument(driver) === cpf));
+    setDriver(drivers.find((driver) => driver.documents.cpf.number === cpf));
   }, [drivers]);
 
   const [form] = Form.useForm();
@@ -79,7 +78,7 @@ const CollectionEditForm = ({ cpf, open, onCreate, onCancel }) => {
         </Form.Item>
         <Form.Item
           name="cnh"
-          initialValue={getDocument(driver, "numberCNH")}
+          initialValue={driver.documents.cnh.number}
           label="Número da CNH"
           rules={[
             {
@@ -92,7 +91,7 @@ const CollectionEditForm = ({ cpf, open, onCreate, onCancel }) => {
         </Form.Item>
         <Form.Item
           name="category"
-          initialValue={getDocument(driver, "CNH")}
+          initialValue={driver.documents.cnh.category}
           label="Categoria da CNH"
           rules={[
             {
@@ -105,7 +104,7 @@ const CollectionEditForm = ({ cpf, open, onCreate, onCancel }) => {
         </Form.Item>
         <Form.Item
           name="cpf"
-          initialValue={getDocument(driver)}
+          initialValue={driver.documents.cpf.number}
           label="CPF"
           rules={[
             {

@@ -49,6 +49,13 @@
       "street_name": ""
     },
     "documents": {
+      "cnh": {
+        "expires_at": "2010-11-23T00:00:00+00:00",
+        "country": "BR",
+        "number": "700441888",
+        "doc_type": "CNH",
+        "category": "B"
+      },
       "cpf": {
         "country": "BR",
         "number": "12312312377",
