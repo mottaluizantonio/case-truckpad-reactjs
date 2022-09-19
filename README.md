@@ -33,6 +33,7 @@ Algumas das principais tecnologias utilizadas:
 
 Alguns dos principais pontos que quero melhorar no projeto:
 
+- Paginação na listagem de motorista, para caso haja muitos registros;
 - Refatoração com implementação de TDD, com testes unitários e e2e;
 - Utilização de YUP para validar os dados no formulário. Decidi não fazer essa implementação pois o Ant Design já provê este recurso, embora de forma bem menos robusta;
 - Com o último item, impedir a atualiação do CPF do motorista;
