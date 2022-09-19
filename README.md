@@ -2,7 +2,7 @@
 
 Case Frontend da empresa TruckPad, com objetivo de implementar uma plataforma para gerenciamento de motoristas, feito em ReactJS, utilizando Ant Design e SCSS.
 
-> Aplicação rodando no [Vercel](https://mottaluizantonio.vercel.app)
+> Aplicação rodando no [Vercel](https://case-truckpad-reactjs.vercel.app)
 
 
 💭 Objetivos:
@@ -37,6 +37,7 @@ Alguns dos principais pontos que quero melhorar no projeto:
 - Refatoração com implementação de TDD, com testes unitários e e2e;
 - Utilização de YUP para validar os dados no formulário. Decidi não fazer essa implementação pois o Ant Design já provê este recurso, embora de forma bem menos robusta;
 - Com o último item, impedir a atualiação do CPF do motorista;
+- Implementar UUID;
 - Migrar algumas estilizações feitas com Ant Design, através de props, para SCSS. Senti que, no fim das contas, o SCSS foi pouco utilizado e explorado.
 
 
