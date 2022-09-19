@@ -1,11 +1,11 @@
 import { Avatar, List, Button, message, Popconfirm } from "antd";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { DriversContext } from "../../providers/drivers";
+import nameCapitalizer from "../../utils/nameCapitalizer";
 import EditDriverModal from "../EditDriverModal";
 
 const DriversList = () => {
   const { drivers, editDriver } = useContext(DriversContext);
-
   const driversActives = drivers.filter((item) => item.is_active);
 
   const handleClick = (driver) => {
@@ -35,8 +35,10 @@ const DriversList = () => {
         >
           <List.Item.Meta
             avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-            title={<a href="https://ant.design">{driver.name}</a>}
-            description={driver.documents.cnh.category}
+            title={
+              <a href="https://ant.design">{nameCapitalizer(driver.name)}</a>
+            }
+            description={`Categoria ${driver.documents.cnh.category}`}
           />
         </List.Item>
       )}

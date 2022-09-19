@@ -1,6 +1,7 @@
 import { Button, message } from "antd";
 import React, { useContext, useState } from "react";
 import { DriversContext } from "../../providers/drivers";
+import nameCapitalizer from "../../utils/nameCapitalizer";
 import CollectionEditForm from "./CollectionEditForm";
 
 const EditDriverModal = ({ cpf, children }) => {
@@ -12,7 +13,7 @@ const EditDriverModal = ({ cpf, children }) => {
     const { name, phone, birthdate, cnh, category, cpf } = values;
 
     const newDriver = {
-      name,
+      name: nameCapitalizer(name),
       is_active: true,
       birth_date: birthdate._d,
       phone,
