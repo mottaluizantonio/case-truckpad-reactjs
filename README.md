@@ -2,7 +2,7 @@
 
 Case Frontend da empresa TruckPad, com objetivo de implementar uma plataforma para gerenciamento de motoristas, feito em ReactJS, utilizando Ant Design e SCSS.
 
-> Aplicação rodando no [Vercel](https://mottaluizantonio.vercel.app)
+> Aplicação rodando no [Vercel](https://case-truckpad-reactjs.vercel.app)
 
 
 💭 Objetivos:
