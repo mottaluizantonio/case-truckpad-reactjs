@@ -58,6 +58,7 @@ const CollectionEditForm = ({ cpf, open, onCreate, onCancel }) => {
           </Form.Item>
           <Form.Item
             name="birthdate"
+            // initialValue={driver.birth_date}
             label="Data de Nascimento"
             rules={[
               {

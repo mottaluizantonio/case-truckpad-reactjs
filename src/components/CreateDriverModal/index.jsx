@@ -20,7 +20,7 @@ const CreateDriverModal = ({ children }) => {
       const newDriver = {
         name: nameCapitalizer(name),
         is_active: true,
-        birth_date: birthdate._d,
+        birth_date: birthdate,
         phone,
         documents: {
           cpf: {
@@ -36,7 +36,7 @@ const CreateDriverModal = ({ children }) => {
       };
 
       addDriver(newDriver);
-      message.success("Motorista criado com sucesso!");
+      console.log("motorista: ", newDriver);
       setOpen(false);
     } else {
       message.error("CPF já cadastrado!");

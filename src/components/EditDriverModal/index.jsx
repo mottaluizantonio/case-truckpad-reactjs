@@ -15,7 +15,7 @@ const EditDriverModal = ({ cpf, children }) => {
     const newDriver = {
       name: nameCapitalizer(name),
       is_active: true,
-      birth_date: birthdate._d,
+      birth_date: birthdate,
       phone,
       documents: {
         cpf: {
