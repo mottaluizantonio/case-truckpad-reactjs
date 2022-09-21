@@ -36,6 +36,7 @@ const CreateDriverModal = ({ children }) => {
       };
 
       addDriver(newDriver);
+      message.success("Motorista criado com sucesso!");
       console.log("motorista: ", newDriver);
       setOpen(false);
     } else {
