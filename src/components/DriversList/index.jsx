@@ -1,12 +1,12 @@
 import { Avatar, List, Button, message, Popconfirm } from "antd";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { DriversContext } from "../../providers/drivers";
 import nameCapitalizer from "../../utils/nameCapitalizer";
 import EditDriverModal from "../EditDriverModal";
 
 const DriversList = () => {
   const { drivers, editDriver } = useContext(DriversContext);
-  const driversActives = drivers.filter((item) => item.is_active);
+  const driversActives = drivers.filter((driver) => driver.is_active);
 
   const handleClick = (driver) => {
     editDriver(driver, false);
@@ -29,7 +29,9 @@ const DriversList = () => {
               okText="Sim"
               cancelText="Não"
             >
-              <Button danger>Excluir</Button>
+              <Button type="button" danger>
+                Excluir
+              </Button>
             </Popconfirm>,
           ]}
         >

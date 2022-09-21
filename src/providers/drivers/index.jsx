@@ -12,10 +12,10 @@ export const DriversProvider = ({ children }) => {
         Accept: "application/json",
       },
     })
-      .then(function (response) {
+      .then((response) => {
         return response.json();
       })
-      .then(function (myJson) {
+      .then((myJson) => {
         setDrivers(myJson);
       });
   }, []);
@@ -25,12 +25,11 @@ export const DriversProvider = ({ children }) => {
   };
 
   const editDriver = (driver, is_active = true) => {
-    const updatedDriverList = drivers.map((item) => {
-      if (item.documents.cpf.number === driver.documents.cpf.number) {
-        return { ...driver, is_active };
-      }
-      return item;
-    });
+    const updatedDriverList = drivers.map((item) =>
+      item.documents.cpf.number === driver.documents.cpf.number
+        ? { ...driver, is_active }
+        : item
+    );
 
     setDrivers(updatedDriverList);
   };
